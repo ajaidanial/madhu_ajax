@@ -39,6 +39,7 @@
         min-height: 50px !important;
         min-width: 50px !important;
     }
+
 </style>
 
 <body>
@@ -49,7 +50,7 @@
     </div>
     <!--table-->
     <div class="table-responsive">
-        <form action="" method="post">
+        <form action="/form3" method="post">
             <table border="1" class=" table table-striped">
                 <thead>
                     <!--row 1-->
@@ -504,20 +505,16 @@
                     </tr>
                 </tbody>
             </table>
-            <input type="submit" />
+            <input type="button" id="formSubmitButton" value="submit" />
             {{ form.csrf_token }}
         </form>
     </div>
-    <script>
-        var d = new Date();
-        document.getElementById("demo").innerHTML = d;
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         // front end validation using ajax-jquery
         $(document).ready(function () {
-            $("#submitButton").click(function () {
-                $.post("/form1", {
+            $("#formSubmitButton").click(function () {
+                $.post("/form3", {
                         actual_1: $('#actual_1').val(),
                         actual_2: $('#actual_2').val(),
                         actual_3: $('#actual_3').val(),
@@ -535,7 +532,6 @@
                         t3r_7: $('#t3r_7').val(),
                         t3r_8: $('#t3r_8').val(),
                         t3r_total: $('#t3r_total').val(),
-
 
                         //ok
                         ds_1: $('#ds_1').val(),
@@ -568,8 +564,6 @@
                         customercomplaint_8b: $('#customercomplaint_7b').val(),
                         customercomplaint_totalb: $('#customercomplaint_totalb').val(),
 
-
-
                         //RD
                         rd_1: $('#rd_1').val(),
                         rd_2: $('#rd_2').val(),
@@ -591,8 +585,6 @@
                         sd_7: $('#sd_7').val(),
                         sd_8: $('#sd_8').val(),
                         sd_total: $('#sd_total').val(),
-
-
 
                         //SPITT
                         spitt_1: $('#spitt_1').val(),
@@ -648,9 +640,6 @@
                         dust_8: $('#dust_8').val(),
                         dust_total: $('#dust_total').val(),
 
-
-
-
                         reg: $('#reg').val(),
                         cl: $('#cl').val(),
                         plan: $('#plan').val(),
@@ -660,7 +649,12 @@
                         shortcommunication: $('#shortcommunication').val(),
                         feedback: $('#feedback').val(),
                         teamleadersign: $('#teamleadersign').val(),
-                        groupleadersign: $('#groupleadersign').val()
+                        groupleadersign: $('#groupleadersign').val(),
+
+                        t3r_1: $('#t3r_1').val(),
+                        t3r_2: $('#t3r_2').val(),
+                        t3r_3: $('#t3r_3').val(),
+                        csrf_token: $('#csrf_token').val(),
 
                     },
                     function (data, status) {
@@ -668,6 +662,7 @@
                     });
             });
         });
+
     </script>
 
 </body>
