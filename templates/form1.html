@@ -1,0 +1,695 @@
+<!-- <form action="" method="post">
+  {{ form.reg }} {{ form.row2 }} {{ form.row3 }} {{ form.row4 }} {{ form.row5
+  }} {{ form.row6 }}
+  <input type="submit" />
+  {{ form.csrf_token }}
+</form> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table 1</title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<!--bootstrap-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    th {
+        color: black;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    tr {
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        min-height: 50px !important;
+        min-width: 50px !important;
+
+    }
+
+    tr {
+        min-height: 50px !important;
+        min-width: 50px !important;
+    }
+
+</style>
+
+<body>
+    <!--time start-->
+    <div class="container">
+        <h1 style="text-align: center;">TABLE 1</h1>
+        <h5 id="demo" style="text-align: center;"></h5>
+    </div>
+
+    <!--table start-->
+    <div class="table-responsive">
+        <form method="POST" id="formoid" action="/form1">
+            <table border="1" class=" table table-striped">
+                <thead>
+                    <!--row 1-->
+                    <tr>
+                        <th colspan="2">PAINTING UNIT II</th>
+                        <th colspan="2">Cell Name</th>
+                        <th colspan="4"></th>
+                        <th colspan="9">TEAM LEADERS 'TO DO' LIST AND SHIFT 'PDCA'</th>
+                        <th colspan="3">DATE/ SHIFT</th>
+                        <th colspan="3"></th>
+                    </tr>
+                    <!--row 2-->
+                    <tr>
+                        <th colspan="2">Team Leader's Activities</th>
+                        <th colspan="1">Status</th>
+                        <th colspan="1" rowspan="3">Hour</th>
+                        <th colspan="19">
+                            CRITICAL PERFORMANCE PARAMETERS FOR THE SHIFT
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--row 3-->
+                    <tr>
+                        <th colspan="2" rowspan="2">
+                            Read Log , collect info. & Review opening stock
+                        </th>
+                        <td colspan="1" rowspan="2"><input type="checkbox" /></td>
+
+                        <th colspan="8">CONVEYOR UTILISATION</th>
+                        <th colspan="1" rowspan="2">Hour</th>
+                        <th colspan="1" rowspan="2">Unloaded</th>
+                        <th colspan="1" rowspan="2">Ok</th>
+                        <th colspan="1" rowspan="2">Rejected</th>
+                        <th colspan="7">Rework</th>
+                    </tr>
+                    <!--row 4-->
+                    <tr>
+                        <th colspan="1">Plan</th>
+                        <th colspan="1">Actual</th>
+                        <th colspan="3">Top 3 Reasons</th>
+                        <th colspan="3">Action</th>
+
+                        <th colspan="1">Dust</th>
+                        <th colspan="1">RD</th>
+                        <th colspan="1">UC</th>
+                        <th colspan="1">Dspray</th>
+                        <th colspan="1">Spitt</th>
+                        <th colspan="1">Others</th>
+                        <th colspan="1">Action</th>
+                    </tr>
+                    <!--row 5-->
+                    <tr>
+                        <th colspan="2">
+                            Verify loading plan and parts availability
+                        </th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <td colspan="1">1</td>1
+                        <td colspan="1" name="actual_1">
+                            {{form.actual_1}}
+                        </td>
+                        <!-- <td colspan="3">{{form.t3r_1}}</td>  -->
+                        <td colspan="3">{{records[0]}}</td>
+                        <td colspan="3">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                        <td colspan="1">1</td>
+                        <td colspan="1">{{form.unloaded_1}}</td>
+                        <td colspan="1">{{form.ok_1}}</td>
+                        <td colspan="1">{{form.rejected_1}}</td>
+                        <td colspan="1">{{form.dust_1}}</td>
+                        <td colspan="1">{{form.rd_1}}</td>
+                        <td colspan="1">{{form.uc_1}}</td>
+                        <td colspan="1">{{form.dspray_1}}</td>
+                        <td colspan="1">{{form.spitt_1}}</td>
+                        <td colspan="1">{{form.others_1}}</td>
+
+
+                        <td colspan="1">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--row 6-->
+                    <!--row 7-->
+                    <tr>
+                        <th colspan="2">
+                            Conduct surise meeting with team members
+                        </th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <td colspan="1">2</td>
+                        <td colspan="1" name="actual_2">{{form.actual_2}}</td>
+                        <!-- <td colspan="3">{{form.t3r_2}}</td> -->
+                        <td colspan="3">{{records[1]}}</td>
+                        <td colspan="3">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                        <td colspan="1">2</td>
+                        <td colspan="1">{{form.unloaded_2}}</td>
+                        <td colspan="1">{{form.ok_2}}</td>
+                        <td colspan="1">{{form.rejected_2}}</td>
+                        <td colspan="1">{{form.dust_2}}</td>
+                        <td colspan="1">{{form.rd_2}}</td>
+                        <td colspan="1">{{form.uc_2}}</td>
+                        <td colspan="1">{{form.dspray_2}}</td>
+                        <td colspan="1">{{form.spitt_2}}</td>
+                        <td colspan="1">{{form.others_2}}</td>
+
+                        <td colspan="1">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--row-->
+                    <tr>
+                        <th colspan="2">
+                            Check manpower absentism status
+                        </th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <td colspan="1">3</td>
+                        <td colspan="1" name="actual_3">{{form.actual_3}}</td>
+                        <!-- <td colspan="3">{{form.t3r_3}}</td> -->
+                        <td colspan="3">{{records[2]}}</td>
+
+                        <td colspan="3">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                        <td colspan="1">3</td>
+                        <td colspan="1">{{form.unloaded_3}}</td>
+                        <td colspan="1">{{form.ok_3}}</td>
+                        <td colspan="1">{{form.rejected_3}}</td>
+                        <td colspan="1">{{form.dust_3}}</td>
+                        <td colspan="1">{{form.rd_3}}</td>
+                        <td colspan="1">{{form.uc_3}}</td>
+                        <td colspan="1">{{form.dspray_3}}</td>
+                        <td colspan="1">{{form.spitt_3}}</td>
+                        <td colspan="1">{{form.others_3}}</td>
+
+                        <td colspan="1">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--row-->
+                    <tr>
+                        <th colspan="2">
+                            Deploy manpower as per skill matrix / update atte
+                        </th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <td colspan="1">4</td>
+                        <td colspan="1" name="actual_4">{{form.actual_4}}</td>
+                        <td colspan="3">{{form.t3r_4}}</td>
+
+                        <td colspan="3">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                        <td colspan="1">4</td>
+                        <td colspan="1">{{form.unloaded_4}}</td>
+                        <td colspan="1">{{form.ok_4}}</td>
+                        <td colspan="1">{{form.rejected_4}}</td>
+                        <td colspan="1">{{form.dust_4}}</td>
+                        <td colspan="1">{{form.rd_4}}</td>
+                        <td colspan="1">{{form.uc_4}}</td>
+                        <td colspan="1">{{form.dspray_4}}</td>
+                        <td colspan="1">{{form.spitt_4}}</td>
+                        <td colspan="1">{{form.others_4}}</td>
+
+                        <td colspan="1">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--row-->
+                    <tr>
+                        <th colspan="2">
+                            Audit first hour output and PDCA
+                        </th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <td colspan="1">5</td>
+                        <td colspan="1" name="actual_5">{{form.actual_5}}</td>
+                        <td colspan="3">{{form.t3r_5}}</td>
+
+                        <td colspan="3">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                        <td colspan="1">5</td>
+                        <td colspan="1">{{form.unloaded_5}}</td>
+                        <td colspan="1">{{form.ok_5}}</td>
+                        <td colspan="1">{{form.rejected_5}}</td>
+                        <td colspan="1">{{form.dust_5}}</td>
+                        <td colspan="1">{{form.rd_5}}</td>
+                        <td colspan="1">{{form.uc_5}}</td>
+                        <td colspan="1">{{form.dspray_5}}</td>
+                        <td colspan="1">{{form.spitt_5}}</td>
+                        <td colspan="1">{{form.others_5}}</td>
+
+                        <td colspan="1">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--row-->
+                    <tr>
+                        <th colspan="2">
+                            Audit JH check sheet and sign
+                        </th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <td colspan="1">6</td>
+                        <td colspan="1">{{form.actual_6}}</td>
+                        <td colspan="3">{{form.t3r_6}}</td>
+
+                        <td colspan="3">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                        <td colspan="1">6</td>
+                        <td colspan="1">{{form.unloaded_6}}</td>
+                        <td colspan="1">{{form.ok_6}}</td>
+                        <td colspan="1">{{form.rejected_6}}</td>
+                        <td colspan="1">{{form.dust_6}}</td>
+                        <td colspan="1">{{form.rd_6}}</td>
+                        <td colspan="1">{{form.uc_6}}</td>
+                        <td colspan="1">{{form.dspray_6}}</td>
+                        <td colspan="1">{{form.spitt_6}}</td>
+                        <td colspan="1">{{form.others_6}}</td>
+
+                        <td colspan="1">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--row-->
+                    <tr>
+                        <th colspan="2">
+                            Attend Daily Paint shop PDCA meeting
+                        </th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <td colspan="1">7</td>
+                        <td colspan="1">{{form.actual_7}}</td>
+                        <td colspan="3">{{form.t3r_7}}</td>
+
+                        <td colspan="3">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                        <td colspan="1">7</td>
+                        <td colspan="1">{{form.unloaded_7}}</td>
+                        <td colspan="1">{{form.ok_7}}</td>
+                        <td colspan="1">{{form.rejected_7}}</td>
+                        <td colspan="1">{{form.dust_7}}</td>
+                        <td colspan="1">{{form.rd_7}}</td>
+                        <td colspan="1">{{form.uc_7}}</td>
+                        <td colspan="1">{{form.dspray_7}}</td>
+                        <td colspan="1">{{form.spitt_7}}</td>
+                        <td colspan="1">{{form.others_7}}</td>
+
+                        <td colspan="1">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--row-->
+                    <tr>
+                        <th colspan="2">
+                            Audit Operator check sheet and sign
+                        </th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <td colspan="1">8</td>
+                        <td colspan="1">{{form.actual_8}}</td>
+                        <td colspan="3">{{form.t3r_8}}</td>
+
+                        <td colspan="3">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                        <td colspan="1">8</td>
+                        <td colspan="1">{{form.unloaded_8}}</td>
+                        <td colspan="1">{{form.ok_8}}</td>
+                        <td colspan="1">{{form.rejected_8}}</td>
+                        <td colspan="1">{{form.dust_8}}</td>
+                        <td colspan="1">{{form.rd_8}}</td>
+                        <td colspan="1">{{form.uc_8}}</td>
+                        <td colspan="1">{{form.dspray_8}}</td>
+                        <td colspan="1">{{form.spitt_8}}</td>
+                        <td colspan="1">{{form.others_8}}</td>
+                        <td colspan="1">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--row-->
+                    <tr>
+                        <th colspan="2">
+                            Achieve production plan thru hourly PDCA
+                        </th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <td colspan="1">total</td>
+                        <td colspan="1">{{form.actual_total}}</td>
+                        <td colspan="3">{{form.t3r_total}}</td>
+
+                        <td colspan="3">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                        <td colspan="1">total</td>
+                        <td colspan="1">{{form.unloaded_total}}</td>
+                        <td colspan="1">{{form.ok_total}}</td>
+                        <td colspan="1">{{form.rejected_total}}</td>
+                        <td colspan="1">{{form.dust_total}}</td>
+                        <td colspan="1">{{form.rd_total}}</td>
+                        <td colspan="1">{{form.uc_total}}</td>
+                        <td colspan="1">{{form.dspray_total}}</td>
+                        <td colspan="1">{{form.spitt_total}}</td>
+                        <td colspan="1">{{form.others_total}}</td>
+
+                        <td colspan="1">
+                            <select>
+                                <option>1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--row 23-->
+                    <tr>
+                        <th colspan="2" rowspan="2">Conduct 2S audit in all stages</th>
+                        <td colspan="1" rowspan="2"><input type="checkbox" /></td>
+                        <th colspan="3">ABSENTISM</th>
+                        <th colspan="3">SAFETY</th>
+                        <th colspan="6">BREAKDOWN DETAILS</th>
+                        <th colspan="8">SHORTAGE COMMUNICATION</th>
+                    </tr>
+                    <!--row 24-->
+                    <tr>
+                        <th colspan="1">PLAN</th>
+                        <th colspan="1">REG</th>
+                        <th colspan="1">CL</th>
+                        <th colspan="1">PLAN</th>
+                        <th colspan="1">F.AID</th>
+                        <th colspan="1">N.MISS</th>
+                        <td colspan="6" rowspan="2">{{ form.breakdowndetails }}</td>
+                        <td colspan="8" rowspan="2">{{form.shortcommunication}}</td>
+                    </tr>
+                    <!--row 25-->
+                    <tr>
+                        <th colspan="2" rowspan="2">
+                            Conduct MH audit at loading & unloading
+                        </th>
+                        <td colspan="1" rowspan="2"><input type="checkbox" /></td>
+                        <td colspan="1">1</td>
+                        <td colspan="1">{{ form.reg }}</td>
+                        <td colspan="1" name="cl">{{ form.cl }}</td>
+                        <td colspan="1" name="plan">{{ form.plan }}</td>
+                        <td colspan="1" name="faid">{{ form.faid }}</td>
+                        <td colspan="1" name="nmiss">{{ form.nmiss }}</td>
+                    </tr>
+                    <!--row 26-->
+                    <tr>
+                        <th colspan="4" rowspan="2" rowspan="2">
+                            SHIFT CLOSING VERIFICATION
+                        </th>
+                        <th colspan="8">STAND UP MEETING POINTS</th>
+                        <th colspan="8">FEED BACK FROM REPORTING GROUP LEADER</th>
+                    </tr>
+                    <!--row 27-->
+                    <tr>
+                        <th colspan="2" rowspan="2">
+                            Review & Monitor parts return from next customer
+                        </th>
+                        <td colspan="1" rowspan="2"><input type="checkbox" /></td>
+
+                        <th colspan="1" rowspan="2">P</th>
+                        <td colspan="7" rowspan="2">{{form.standup_p}}</td>
+                        <td colspan="8" rowspan="5">{{form.feedback}}</td>
+                    </tr>
+                    <!--row 28-->
+                    <tr>
+                        <th colspan="3">CHECK POINT</th>
+                        <th colspan="1">STATUS</th>
+                    </tr>
+                    <!--row 29-->
+                    <tr>
+                        <th colspan="2">Do shift PDCA along with GL.,</th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <th colspan="3">Material availability for opening plan</th>
+                        <th colspan="1">OK / NOK</th>
+                        <th colspan="1">Q</th>
+
+                        <td colspan="7">{{form.standup_q}}</td>
+                    </tr>
+                    <!--row-->
+                    <tr>
+                        <th colspan="2">Update VCS,</th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <th colspan="3">Mixed Paint availability</th>
+                        <th colspan="1">OK / NOK</th>
+                        <th colspan="1">C</th>
+
+                        <td colspan="7">{{form.standup_c}}</td>
+                    </tr>
+                    <!--row-->
+                    <tr>
+                        <th colspan="2">Next day plan discussion with GL,</th>
+                        <td colspan="1"><input type="checkbox" /></td>
+                        <th colspan="3">Masked parts availabilty for plan</th>
+                        <th colspan="1">OK / NOK</th>
+                        <th colspan="1">D</th>
+
+                        <td colspan="7">{{form.standup_d}}</td>
+                    </tr>
+                    <!--row-->
+
+                    <tr>
+                        <th colspan="2">
+                            Total 'To Do' list check Plan
+                        </th>
+                        <th colspan="1">
+                            <input type="text" />
+                        </th>
+                        <th colspan="3">No excess storage of trolleys and bins</th>
+                        <th colspan="1">OK / NOK</th>
+                        <th colspan="1">M</th>
+                        <td colspan="7">{{form.standup_m}}</td>
+                        <th colspan="3">Team leader signature</th>
+                        <td colspan="5">{{form.teamleadersign}}</td>
+                        </td>
+                    </tr>
+                    <!--row-->
+
+                    <tr>
+                        <th colspan="2">
+                            Actually done
+                        </th>
+                        <th colspan="1">
+                            <input type="text" />
+                        </th>
+                        <th colspan="3">PPE Availability</th>
+                        <th colspan="1">OK / NOK</th>
+                        <th colspan="1">S</th>
+                        <td colspan="7">{{form.standup_s}}</td>
+                        <th colspan="3">Group leader signature</th>
+                        <td colspan="5">{{form.groupleadersign}}</td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <input type="button" id="submitButton1" name="form1" value="Submit">
+
+            {{ form.csrf_token }}
+
+        </form>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#submitButton1').on("click", function (e) {
+                alert("asd")
+                e.preventDefault()
+                $.post("/form1", {
+                        actual_1: $('#actual_1').val(),
+                        actual_2: $('#actual_2').val(),
+                        actual_3: $('#actual_3').val(),
+                        actual_4: $('#actual_4').val(),
+                        actual_5: $('#actual_5').val(),
+                        actual_6: $('#actual_6').val(),
+                        actual_7: $('#actual_7').val(),
+                        actual_8: $('#actual_8').val(),
+                        actual_total: $('#actual_total').val(),
+
+                        // top3 reasons
+                        t3r_4: $('#t3r_4').val(),
+                        t3r_5: $('#t3r_5').val(),
+                        t3r_6: $('#t3r_6').val(),
+                        t3r_7: $('#t3r_7').val(),
+                        t3r_8: $('#t3r_8').val(),
+                        t3r_total: $('#t3r_total').val(),
+
+                        //unloaded
+                        unloaded_1: $('#unloaded_1').val(),
+                        unloaded_2: $('#unloaded_2').val(),
+                        unloaded_3: $('#unloaded_3').val(),
+                        unloaded_4: $('#unloaded_4').val(),
+                        unloaded_5: $('#unloaded_5').val(),
+                        unloaded_6: $('#unloaded_6').val(),
+                        unloaded_7: $('#unloaded_7').val(),
+                        unloaded_8: $('#unloaded_8').val(),
+                        unloaded_total: $('#unloaded_total').val(),
+
+                        //ok
+                        ok_1: $('#ok_1').val(),
+                        ok_2: $('#ok_2').val(),
+                        ok_3: $('#ok_3').val(),
+                        ok_4: $('#ok_4').val(),
+                        ok_5: $('#ok_5').val(),
+                        ok_6: $('#ok_6').val(),
+                        ok_7: $('#ok_7').val(),
+                        ok_8: $('#ok_8').val(),
+                        ok_total: $('#ok_total').val(),
+
+                        //rejected
+                        rejected_1: $('#rejected_1').val(),
+                        rejected_2: $('#rejected_2').val(),
+                        rejected_3: $('#rejected_3').val(),
+                        rejected_4: $('#rejected_4').val(),
+                        rejected_5: $('#rejected_5').val(),
+                        rejected_6: $('#rejected_6').val(),
+                        rejected_7: $('#rejected_7').val(),
+                        rejected_8: $('#rejected_8').val(),
+                        rejected_total: $('#rejected_total').val(),
+
+                        //RD
+                        rd_1: $('#rd_1').val(),
+                        rd_2: $('#rd_2').val(),
+                        rd_3: $('#rd_3').val(),
+                        rd_4: $('#rd_4').val(),
+                        rd_5: $('#rd_5').val(),
+                        rd_6: $('#rd_6').val(),
+                        rd_7: $('#rd_7').val(),
+                        rd_8: $('#rd_8').val(),
+                        rd_total: $('#rd_total').val(),
+
+                        //DSPRAY
+                        dspray_1: $('#dspray_1').val(),
+                        dspray_2: $('#dspray_2').val(),
+                        dspray_3: $('#dspray_3').val(),
+                        dspray_4: $('#dspray_4').val(),
+                        dspray_5: $('#dspray_5').val(),
+                        dspray_6: $('#dspray_6').val(),
+                        dspray_7: $('#dspray_7').val(),
+                        dspray_8: $('#dspray_8').val(),
+                        dspray_total: $('#dspray_total').val(),
+
+                        //SPITT
+                        spitt_1: $('#spitt_1').val(),
+                        spitt_2: $('#spitt_2').val(),
+                        spitt_3: $('#spitt_3').val(),
+                        spitt_4: $('#spitt_4').val(),
+                        spitt_5: $('#spitt_5').val(),
+                        spitt_6: $('#spitt_6').val(),
+                        spitt_7: $('#spitt_7').val(),
+                        spitt_8: $('#spitt_8').val(),
+                        spitt_total: $('#spitt_total').val(),
+
+                        //OThers
+                        others_1: $('#others_1').val(),
+                        others_2: $('#others_2').val(),
+                        others_3: $('#others_3').val(),
+                        others_4: $('#others_4').val(),
+                        others_5: $('#others_5').val(),
+                        others_6: $('#others_6').val(),
+                        others_7: $('#others_7').val(),
+                        others_8: $('#others_8').val(),
+                        others_total: $('#others_total').val(),
+
+                        //standupmeetings
+                        standup_p: $('#standup_p').val(),
+                        standup_q: $('#standup_q').val(),
+                        standup_c: $('#standup_c').val(),
+                        standup_d: $('#standup_d').val(),
+                        standup_m: $('#standup_m').val(),
+                        standup_s: $('#standup_s').val(),
+
+                        //UC
+                        uc_1: $('#uc_1').val(),
+                        uc_2: $('#uc_2').val(),
+                        uc_3: $('#uc_3').val(),
+                        uc_4: $('#uc_4').val(),
+                        uc_5: $('#uc_5').val(),
+                        uc_6: $('#uc_6').val(),
+                        uc_7: $('#uc_7').val(),
+                        uc_8: $('#uc_8').val(),
+                        uc_total: $('#uc_total').val(),
+
+                        //dust
+                        dust_1: $('#dust_1').val(),
+                        dust_2: $('#dust_2').val(),
+                        dust_3: $('#dust_3').val(),
+                        dust_4: $('#dust_4').val(),
+                        dust_5: $('#dust_5').val(),
+                        dust_6: $('#dust_6').val(),
+                        dust_7: $('#dust_7').val(),
+                        dust_8: $('#dust_8').val(),
+                        dust_total: $('#dust_total').val(),
+
+                        reg: $('#reg').val(),
+                        cl: $('#cl').val(),
+                        plan: $('#plan').val(),
+                        faid: $('#faid').val(),
+                        nmiss: $('#nmiss').val(),
+                        breakdowndetails: $('#breakdowndetails').val(),
+                        shortcommunication: $('#shortcommunication').val(),
+                        feedback: $('#feedback').val(),
+                        teamleadersign: $('#teamleadersign').val(),
+                        others_1: $('#others_1').val(),
+                        groupleadersign: $('#groupleadersign').val(),
+                        csrf_token: $('#csrf_token').val()
+
+                    },
+                    function (data, status) {
+                        alert("Data: " + data + "\nStatus: " + status);
+                    });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
